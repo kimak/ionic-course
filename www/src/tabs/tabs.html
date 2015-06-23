@@ -1,33 +1,23 @@
 <ion-tabs class="tabs-icon-top tabs-color-active-positive">
 
-
-  <!-- First Tab -->
-  <ion-tab title="Nouveau spot" icon-off="new_spot-off" icon-on="new_spot-on" href="#/tab/new_spot">
-    <ion-nav-view name="tab-new_spot"></ion-nav-view>
+  <ion-tab title="My place" icon-off="ion-ios-list-outline" icon-on="ion-ios-list-outline" href="#/tab/my-place">
+    <ion-nav-view name="tab-my-place"></ion-nav-view>
+  </ion-tab>
+    
+  <ion-tab title="Add place" icon-off="ion-plus-circled" icon-on="ion-plus-circled" href="#/tab/add-place">
+    <ion-nav-view name="tab-add-place"></ion-nav-view>
   </ion-tab>
 
-
-  <!-- Chats Tab -->
-  <ion-tab title="Autour de moi" icon-off="around_me-off" icon-on="around_me-on" href="#/tab/around_me">
-    <ion-nav-view name="tab-around_me"></ion-nav-view>
+  <ion-tab title="Around me" icon-off="ion-map" icon-on="ion-map" href="#/tab/around-me">
+    <ion-nav-view name="tab-around-me"></ion-nav-view>
   </ion-tab>
 
-
-  <!-- Account Tab -->
-  <ion-tab title="Mes spots" icon-off="spotted_list-off" icon-on="spotted_list-on" href="#/tab/spotted_list">
-    <ion-nav-view name="tab-spotted_list"></ion-nav-view>
-  </ion-tab>
-
-  <!-- Friends Tab -->
-  <ion-tab title="Mes amis" icon-off="friends-off" icon-on="friends-on" href="#/tab/friends">
+  <ion-tab title="Friends" icon-off="ion-ios-people" icon-on="ion-ios-people" href="#/tab/friends">
     <ion-nav-view name="tab-friends"></ion-nav-view>
   </ion-tab>
-
-
-  <!-- Account Tab -->
-  <ion-tab title="Plus" icon-off="more-off" icon-on="more-on" ng-click="openModal()">
+    
+  <ion-tab title="More" icon-off="ion-more" icon-on="ion-more">
     <ion-nav-view name="tab-more"></ion-nav-view>
   </ion-tab>
-
 
 </ion-tabs>

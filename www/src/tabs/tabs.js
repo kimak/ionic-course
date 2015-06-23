@@ -10,19 +10,27 @@ angular.module('places')
 				templateUrl: "src/tabs/tabs.html"
 			})
 			// Each tab has its own nav history stack:
-			.state('tab.new_spot', {
-				url: '/new_spot',
+			.state('tab.my-place', {
+				url: '/my-place',
 				views: {
-					'tab-new_spot': {
-						templateUrl: 'src/tabs/views/tab-new_spot.html'
+					'tab-my-place': {
+						templateUrl: 'src/tabs/views/0_my-place.html'
 					}
 				}
 			})
-			.state('tab.spotted_list', {
-				url: '/spotted_list',
+			.state('tab.add-place', {
+				url: '/add-place',
 				views: {
-					'tab-spotted_list': {
-						templateUrl: 'src/tabs/views/tab-spotted_list.html'
+					'tab-add-place': {
+						templateUrl: 'src/tabs/views/1_add-place.html'
+					}
+				}
+			})
+			.state('tab.around-me', {
+				url: '/around-me',
+				views: {
+					'tab-around-me': {
+						templateUrl: 'src/tabs/views/2_around-me.html'
 					}
 				}
 			})
@@ -30,15 +38,7 @@ angular.module('places')
 				url: '/friends',
 				views: {
 					'tab-friends': {
-						templateUrl: 'src/tabs/views/tab-friends.html'
-					}
-				}
-			})
-			.state('tab.around_me', {
-				url: '/around_me',
-				views: {
-					'tab-around_me': {
-						templateUrl: 'src/tabs/views/tab-around_me.html'
+						templateUrl: 'src/tabs/views/3_friends.html'
 					}
 				}
 			});
