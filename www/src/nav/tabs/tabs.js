@@ -17,7 +17,8 @@ angular.module('places')
 				},
 				views: {
 					'tab-my-place': {
-						templateUrl: 'src/places/mines/my-place.html'
+						templateUrl: 'src/places/mines/my-place.html',
+						controller:'MyPlaceCtrl'
 					}
 				}
 			})
