@@ -4,16 +4,25 @@ angular.module('places')
 	.controller('HeaderCtrl', function($rootScope,$scope,$state) {
 
 		//properties
-		$scope.enabled = false;
-		$scope.title = "";
+		$scope.enabled = _isEnabled();
+		$scope.title = _getTitle();
 
 		//events
 		$rootScope.$on('$stateChangeSuccess',
 			function(event, toState, toParams, fromState, fromParams){
 
-				if(toState.data) $scope.title = toState.data.title;
-				$scope.enabled = !$state.is("login");
+				$scope.title = _getTitle();
+				$scope.enabled = _isEnabled();
 
-			});
+		});
+
+		//privates
+		function _isEnabled(){
+			return !$state.is("login");
+		};
+
+		function _getTitle(){
+			return ($state.$current.data) ? $state.$current.data.title : "";
+		};
 
 	});
