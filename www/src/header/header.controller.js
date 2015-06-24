@@ -16,6 +16,7 @@ angular.module('places')
 
 		});
 
+
 		//privates
 		function _isEnabled(){
 			return !$state.is("login");
