@@ -5,3 +5,7 @@
     font-size:100px;
     padding-bottom: 60px;
 }
+
+.bar-footer .button.button-block{
+    margin: 0;
+}
