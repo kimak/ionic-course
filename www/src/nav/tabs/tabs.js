@@ -7,7 +7,7 @@ angular.module('places')
 			.state('tab', {
 				url: "/tab",
 				abstract: true,
-				templateUrl: "src/menu/menu.html"
+				templateUrl: "src/nav/menu/menu.html"
 			})
 			// Each tab has its own nav history stack:
 			.state('tab.my-place', {
@@ -17,7 +17,7 @@ angular.module('places')
 				},
 				views: {
 					'tab-my-place': {
-						templateUrl: 'src/tabs/views/0_my-place.html'
+						templateUrl: 'src/places/mines/my-place.html'
 					}
 				}
 			})
@@ -28,7 +28,7 @@ angular.module('places')
 				},
 				views: {
 					'tab-add-place': {
-						templateUrl: 'src/tabs/views/1_add-place.html'
+						templateUrl: 'src/places/add/add-place.html'
 					}
 				}
 			})
@@ -39,7 +39,7 @@ angular.module('places')
 				},
 				views: {
 					'tab-around-me': {
-						templateUrl: 'src/tabs/views/2_around-me.html'
+						templateUrl: 'src/places/around/around-me.html'
 					}
 				}
 			})
@@ -50,7 +50,7 @@ angular.module('places')
 				},
 				views: {
 					'tab-friends': {
-						templateUrl: 'src/tabs/views/3_friends.html'
+						templateUrl: 'src/places/friends/friends.html'
 					}
 				}
 			});
