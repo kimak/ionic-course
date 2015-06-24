@@ -1,1 +1,7 @@
 /* custom styles in css */
+
+.logo{
+    text-align: center;
+    font-size:100px;
+    padding-bottom: 60px;
+}
