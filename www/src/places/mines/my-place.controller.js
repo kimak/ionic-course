@@ -58,5 +58,7 @@ angular.module('places')
 		//properties
 		$scope.list = list;
 
+		$scope.ok = true;
+
 
 	});
