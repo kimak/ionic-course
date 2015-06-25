@@ -52,7 +52,8 @@ angular.module('places')
 				},
 				views: {
 					'tab-friends': {
-						templateUrl: 'src/places/friends/friends.html'
+						templateUrl: 'src/places/friends/friends.html',
+						controller:'FriendsCtrl'
 					}
 				}
 			});
