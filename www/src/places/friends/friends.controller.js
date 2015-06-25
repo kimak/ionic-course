@@ -1,5 +1,5 @@
 angular.module('places')
-	.controller('FriendsCtrl', function($scope, $ionicLoading) {
+	.controller('FriendsCtrl', function($scope, $ionicLoading,FriendsService) {
 
 
 
