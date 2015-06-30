@@ -21,13 +21,16 @@ angular.module('places').factory("FirebaseService", function ($firebaseAuth) {
 
 		signUp: function (email, password) {
 
+			var that = this;
+
 			var promise = auth.$createUser({
 				email: email,
 				password: password
 			}).then(function(authData) {
-				console.log("created in as:", authData.uid);
 
+				promise = that.login(email,password);
 				return promise;
+				
 			}).catch(function (error) {
 				alert("FirebaseService. " + error);
 				return promise;
