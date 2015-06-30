@@ -19,6 +19,14 @@ angular.module('places').factory("FirebaseService", function ($firebaseAuth) {
 			return promise;
 		},
 
+		logout:function(){
+
+			//$unauth dosen't return a promise because it's a synchronous event
+			//https://github.com/firebase/angularfire/issues/581
+			auth.$unauth();
+
+		},
+
 		signUp: function (email, password) {
 
 			var that = this;
@@ -30,7 +38,7 @@ angular.module('places').factory("FirebaseService", function ($firebaseAuth) {
 
 				promise = that.login(email,password);
 				return promise;
-				
+
 			}).catch(function (error) {
 				alert("FirebaseService. " + error);
 				return promise;

@@ -20,6 +20,7 @@ angular.module('places')
 				url: "/tab",
 				abstract: true,
 				templateUrl: "src/nav/menu/menu.html",
+				controller: "MenuCtrl",
 				resolve:{
 					auth: authResolve
 				}
