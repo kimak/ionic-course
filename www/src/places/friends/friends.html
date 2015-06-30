@@ -1,11 +1,11 @@
 <ion-view>
   <ion-content class="has-header">
-      <div class="item item-divider">
-          A
-      </div>
+      <div ng-repeat="(key,value) in grouped">
+          <div class="item item-divider">{{key}}</div>
 
-      <a class="item" href="#" ng-repeat="item in friends">
-          {{item.name}}
-      </a>
+          <a class="item" href="#" ng-repeat="item in value">
+              {{item.name}}
+          </a>
+      </div>
   </ion-content>
 </ion-view>

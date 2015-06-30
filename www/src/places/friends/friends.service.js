@@ -1,21 +1,27 @@
 angular.module('places').factory("FriendsService", function ($http, $q) {
 
 	return {
-		getFriends: function () {
+
+		getGroupedFriends: function () {
 
 			var defer = $q.defer();
+			this.getFriends().then(function(result){
 
-			$http.get("api/friends.json").then(function (obj) {
+				var grouped =_.groupBy(result.data, function(n) {
+					return n.name.substring(0,1);
+				});
+				console.log(result)
+				console.log(grouped);
+				defer.resolve(grouped);
 
-				//make some structuration modification here
-
-				defer.resolve(obj.data);
-
-			}, function (error) {
+			},function(error){
 				defer.reject(error);
 			});
-
 			return defer.promise;
+		},
+
+		getFriends: function() {
+			return $http.get("api/friends.json");
 		}
 	}
 

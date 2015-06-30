@@ -6,9 +6,9 @@ angular.module('places')
 			showBackdrop: false
 		});
 
-		FriendsService.getFriends().then(function(data){
+		FriendsService.getGroupedFriends().then(function(data){
 
-			$scope.friends = data;
+			$scope.grouped = data;
 			$ionicLoading.hide();
 
 		});
