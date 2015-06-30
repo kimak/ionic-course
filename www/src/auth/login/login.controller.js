@@ -1,17 +1,18 @@
 angular.module('places')
-	.controller('LoginCtrl', function($scope, $ionicLoading,$ionicModal,LoginService) {
+	.controller('LoginCtrl', function($scope, $ionicLoading,$ionicModal,LoginService,$state) {
 
 
 		$scope.login=function(){
-			LoginService.login();
+			LoginService.login($scope.email,$scope.password)
+				.then(function(){
+
+					$state.go('tab.my-place');
+
+				});
 		};
 
 
 		$scope.openSignUp= function(){
-
-			//
-			// $ionicModal.fromTemplateUrl
-
 
 			$ionicModal.fromTemplateUrl('src/auth/signup/signup.modal.html', {
 				scope: $scope,

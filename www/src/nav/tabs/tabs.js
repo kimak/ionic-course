@@ -1,13 +1,28 @@
 angular.module('places')
 	.config(function ($stateProvider) {
 
+		//resolve to restrict access without authentification
+		var authResolve = function(LoginService,$state){
+			var promise = LoginService.requireAuth()
+				.catch(function(error){
+
+					$state.go("login");
+
+					return promise;
+				});
+			return promise;
+		};
+
 		$stateProvider
 
 			// setup an abstract state for the tabs directive
 			.state('tab', {
 				url: "/tab",
 				abstract: true,
-				templateUrl: "src/nav/menu/menu.html"
+				templateUrl: "src/nav/menu/menu.html",
+				resolve:{
+					auth: authResolve
+				}
 			})
 			// Each tab has its own nav history stack:
 			.state('tab.my-place', {
