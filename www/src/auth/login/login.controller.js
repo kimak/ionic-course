@@ -7,7 +7,6 @@ angular.module('places')
 				.then(function(){
 
 					$state.go('tab.my-place');
-
 				});
 		};
 
