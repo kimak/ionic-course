@@ -10,8 +10,7 @@ angular.module('places').factory("FriendsService", function ($http, $q) {
 				var grouped =_.groupBy(result.data, function(n) {
 					return n.name.substring(0,1);
 				});
-				console.log(result)
-				console.log(grouped);
+				
 				defer.resolve(grouped);
 
 			},function(error){
