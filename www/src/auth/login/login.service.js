@@ -1,13 +1,23 @@
-angular.module('places').factory("LoginService", function (FirebaseService,$q) {
+angular.module('places').factory("LoginService", function ($rootScope,FirebaseService,$q) {
 
 	return {
 
+		userEmail : "",
 		login: function(email,password) {
-			return FirebaseService.login(email,password);
+			var that = this;
+			var promise = FirebaseService.login(email,password)
+				.then(function(){
+
+					that.userEmail = email;
+					$rootScope.$broadcast("loginSuccess");
+					return email;
+				});
+			return promise;
 		},
 
 		logout:function(){
 
+			this.userEmail = "";
 			FirebaseService.logout();
 
 			//trigger promise because firebase logout doesn't return promise
@@ -17,7 +27,14 @@ angular.module('places').factory("LoginService", function (FirebaseService,$q) {
 		},
 
 		signUp:function(email, password){
-			return FirebaseService.signUp(email,password);
+			var that = this;
+			return FirebaseService.signUp(email,password)
+			.then(function(){
+
+				that.userEmail = email;
+				$rootScope.$broadcast("loginSuccess");
+				return email;
+			});
 		},
 
 		requireAuth:function(){

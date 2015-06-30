@@ -1,6 +1,7 @@
 angular.module('places')
-	.controller('MenuCtrl', function($scope,LoginService,$state,$ionicSideMenuDelegate) {
+	.controller('MenuCtrl', function($rootScope,$scope,LoginService,$state,$ionicSideMenuDelegate) {
 
+		$scope.userName = LoginService.userEmail;
 
 		$scope.logout=function(){
 
@@ -13,6 +14,11 @@ angular.module('places')
 				});
 
 		};
+
+
+		$rootScope.$on("loginSuccess",function(){
+			$scope.userName = LoginService.userEmail;
+		});
 
 	});
 
