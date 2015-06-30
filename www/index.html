@@ -15,6 +15,8 @@
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
     <script src="lib/lodash/lodash.js"></script>
+    <script src="lib/firebase/firebase-debug.js"></script>
+    <script src="lib/angularfire/dist/angularfire.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB16sGmIekuGIvYOfNoW9T44377IU2d2Es&amp;sensor=true"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
@@ -22,17 +24,30 @@
 
     <!-- your app's js -->
     <script src="src/app.js"></script>
-    <script src="src/login/login.js"></script>
+
+
+    <!-- _common -->
+    <script src="src/_common/firebase/firebase.service.js"></script>
+      <script src="src/_common/modal/modal.controller.js"></script>
+
+    <!-- auth -->
+    <script src="src/auth/login/login.js"></script>
+    <script src="src/auth/login/login.controller.js"></script>
+    <script src="src/auth/login/login.service.js"></script>
+      <script src="src/auth/signup/signup.controller.js"></script>
+
+    <!-- nav -->
     <script src="src/nav/tabs/tabs.js"></script>
     <script src="src/nav/header/header.controller.js"></script>
+    <script src="src/nav/tabs/tabs.controller.js"></script>
+
+    <!-- places -->
     <script src="src/places/mines/my-place.controller.js"></script>
     <script src="src/places/around/around-me.controller.js"></script>
     <script src="src/places/around/map.js"></script>
-    <script src="src/nav/modal/modal.controller.js"></script>
-    <script src="src/nav/tabs/tabs.controller.js"></script>
     <script src="src/places/friends/friends.service.js"></script>
-      <script src="src/places/friends/friends.controller.js"></script>
-      <script src="src/places/friends/groupByFirstLetter.filter.js"></script>
+    <script src="src/places/friends/friends.controller.js"></script>
+    <script src="src/places/friends/groupByFirstLetter.filter.js"></script>
 
   </head>
   <body ng-app="places">

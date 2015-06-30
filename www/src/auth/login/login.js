@@ -3,7 +3,8 @@ angular.module('places')
 
 		$stateProvider.state('login', {
 			url: '/login',
-			templateUrl: 'src/login/login.html'
+			templateUrl: 'src/auth/login/login.html',
+			controller:'LoginCtrl'
 		});
 
 	});

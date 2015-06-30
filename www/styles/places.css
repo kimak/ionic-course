@@ -19,3 +19,8 @@ map {
     height: 100%;
 }
 
+.btn-mini{
+    height: 24px;
+    min-height: 24px;
+    line-height: 10px;
+}
