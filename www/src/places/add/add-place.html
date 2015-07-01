@@ -11,8 +11,14 @@
             </label>
 
             <div class="padding">
-                <button class="button button-block icon-right ion-camera activated">Take a picture</button>
+                <button class="button button-block icon-right ion-camera activated"
+                        ng-click="openPicture()">Take a picture</button>
             </div>
+
+            <div class="padding">
+                <img ng-src="{{imageSrc}}" width="100px" height="100px">
+            </div>
+
         </div>
     </ion-content>
     <footer class="bar bar-footer bar-clear has-tabs">

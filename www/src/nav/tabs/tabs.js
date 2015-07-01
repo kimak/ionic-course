@@ -20,10 +20,12 @@ angular.module('places')
 				url: "/tab",
 				abstract: true,
 				templateUrl: "src/nav/menu/menu.html",
-				controller: "MenuCtrl",
-				resolve:{
+				controller: "MenuCtrl"
+
+				//disable resolve auth to test more quickly
+				/*resolve:{
 					auth: authResolve
-				}
+				}*/
 			})
 			// Each tab has its own nav history stack:
 			.state('tab.my-place', {
@@ -45,7 +47,8 @@ angular.module('places')
 				},
 				views: {
 					'tab-add-place': {
-						templateUrl: 'src/places/add/add-place.html'
+						templateUrl: 'src/places/add/add-place.html',
+						controller:'AddPlaceCtrl'
 					}
 				}
 			})
