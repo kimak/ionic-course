@@ -2,12 +2,16 @@ angular.module('places')
 	.controller('LoginCtrl', function($scope, $ionicLoading,$ionicModal,LoginService,$state) {
 
 
+
 		$scope.login=function(){
+
+			$ionicLoading.show();
+
 			LoginService.login($scope.email,$scope.password)
 				.then(function(){
 
 					$state.go('tab.my-place');
-
+					$ionicLoading.hide();
 				});
 		};
 
