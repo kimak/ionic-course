@@ -1,4 +1,8 @@
 .idea
+<<<<<<< HEAD
 .DS_Store
 platforms
 plugins
+=======
+.DS_Store
+>>>>>>> 3c84f7087312be0465edfe5a0db3994567a65140
