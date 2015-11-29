@@ -11,7 +11,7 @@ angular.module('places')
 		$rootScope.$on('$stateChangeSuccess',
 			function(event, toState, toParams, fromState, fromParams){
 
-				$scope.title = toState.data.title;
+				if(toState.data) $scope.title = toState.data.title;
 				$scope.enabled = !$state.is("login");
 
 			});
